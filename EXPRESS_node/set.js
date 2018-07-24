@@ -1,10 +1,14 @@
 var express = require('express');
 
 var app = express();
+var Router = express.Router();
+
+
+
 
 app.get('/', function (req, res) {
-    res.render('don');
-    //res.send('this is homepage');
+    
+    res.send('this is homepage');
 });
 
 
@@ -17,6 +21,7 @@ app.get('/contact', function (req, res) {
 
 
 app.get('/profile/:id', function (req, res) {
+    var data = { age: 29, job: 'ninja', hobbies: ['sleeping'] };
 
     res.send("requested id is" + req.params.id);
 
